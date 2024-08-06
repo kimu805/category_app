@@ -1,0 +1,8 @@
+<%= form_with model: @categories, url: '/categories/new' do |f|%>
+  <div>
+    カテゴリーの選択
+    <div id="select-wrap">
+      <%= f.collection_select :ancestry, @maincategories, :id, :name, {include_blank: "---"}, {id: "parent-category" } %>
+    </div>
+  </div>
+<% end %>
